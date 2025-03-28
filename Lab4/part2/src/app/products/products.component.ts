@@ -48,3 +48,9 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {}
 }
+
+interface Computer extends Product {
+  model: string;
+  name: string;
+  cpu: number;
+}

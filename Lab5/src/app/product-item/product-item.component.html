@@ -1,0 +1,28 @@
+<div class="product-item">
+    <img [src]="product.image" [alt]="product.name" class="product-image" />
+    <div class="product-details">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p>Rating: {{ product.rating }}</p>
+        <p>Likes: {{ product.likes }}</p>
+        <a [href]="product.link" target="_blank">View on Kaspi.kz</a>
+    </div>
+    <div class="product-actions">
+        <button (click)="like()">Like</button>
+        <button (click)="removeItem()">Remove</button>
+    </div>
+    <!-- Optional Gallery -->
+    <div
+        class="product-gallery"
+        *ngIf="product.gallery && product.gallery.length"
+    >
+        <h4>Gallery</h4>
+        <div class="gallery-images">
+            <img
+                *ngFor="let img of product.gallery"
+                [src]="img"
+                [alt]="product.name + ' gallery image'"
+            />
+        </div>
+    </div>
+</div>
